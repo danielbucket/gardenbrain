@@ -1,0 +1,40 @@
+.Dashboard {
+	display: grid;
+	grid-template-rows: repeat(3, 1fr);
+	grid-template-columns: repeat(3, 1fr);
+
+	grid-template-areas:	"input1 input2 input3"
+												"input4 input5 input6"
+												"input7 input8 input9";
+
+
+
+	border: 1px solid red;
+}
+
+.refresh-btn {
+	grid-area: input2;
+}
+
+.widget {
+	height: 10em;
+	width: 100fr;
+
+	justify-self: center;
+}
+
+.temperature {
+	grid-area: input4;
+}
+
+.humidity {
+	grid-area: input6;
+}
+
+.vpd {
+	grid-area: input7;
+}
+
+.time {
+	grid-area: input9;
+}
