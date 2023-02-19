@@ -1,40 +1,63 @@
-.Dashboard {
+.dashboard {
 	display: grid;
-	grid-template-rows: repeat(3, 1fr);
-	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: 3fr 7fr;
+	grid-template-areas: "btnContainer" "displayContainer";
 
-	grid-template-areas:	"input1 input2 input3"
-												"input4 input5 input6"
-												"input7 input8 input9";
-
-
-
-	border: 1px solid red;
+	border: 1px solid black;
+	width: calc(100vw - 20vw);
+	margin: auto;
 }
 
-.refresh-btn {
-	grid-area: input2;
+.btn-container {
+	grid-area: btnContainer;
+	margin: auto;
 }
 
-.widget {
-	height: 10em;
-	width: 100fr;
-
+.btn {
 	justify-self: center;
+	border: 1px solid black;
 }
 
-.temperature {
-	grid-area: input4;
+.data-display-container {
+	grid-area: displayContainer;
+
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr 1fr;
+	grid-template-areas: "input1	input2"
+											 "input3	input4";
 }
 
-.humidity {
-	grid-area: input6;
+.widget-container {
+	display: grid;
+	grid-template-rows: 1fr 1fr;
+	grid-template-areas: "widgetName"
+												"widgetValue";
+
+	border: .25em solid seagreen;
+	margin: auto;
+	height: 10em;
+	width: 10em;
 }
 
-.vpd {
-	grid-area: input7;
+.widget-name {
+	grid-area: widgetName;
+
+	align-self: end;
 }
 
-.time {
-	grid-area: input9;
+.widget-value {
+	grid-area: widgetValue;
+
+	align-self: start;
 }
+
+
+.temperature { grid-area: input1; }
+.humidity		 { grid-area: input2; }
+.vpd 				 { grid-area: input4; }
+.timestamp	 { grid-area: input3; }
+
+
+
+

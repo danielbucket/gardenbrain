@@ -1,10 +1,7 @@
 import { React, Component } from 'react';
 import ReactDOM from 'react-dom/client';
 import './style.css';
-
 import acInfinityParser from './tools/acInfinityParser.js';
-
-
 
 class Dashboard extends Component {
 	constructor(props) {
@@ -46,7 +43,7 @@ class Dashboard extends Component {
 	startTimer() {
 		setTimeout(() => {
 			this.updateState();
-		}, 1000);
+		}, 500);
 	};
 
 	render() {
@@ -66,7 +63,8 @@ class Dashboard extends Component {
 				const text = curVal.slice(0,1).toUpperCase() + curVal.slice(1);
 
 				return (
-					<div className={`${curVal.toLowerCase()} widget`} key={i}>{text}:
+					<div className={`widget-container ${curVal.toLowerCase()}`} key={i}>
+						<div className="widget-name">{text}:</div>
 						<div className="widget-value"> {state[curVal]}</div>
 					</div>
 				);
@@ -76,10 +74,13 @@ class Dashboard extends Component {
 		const build = widget();
 
 		return (
-			<div className="Dashboard">
-				<button className="timer-btn widget" onClick={() => this.startTimer()}>Timer</button>
-				<button className="refresh-btn widget" onClick={() => this.updateState()}>Refresh</button>
-				{build}
+			<div className="dashboard">
+				<div className="btn-container">
+					<button className="btn" onClick={() => this.updateState()}>Refresh</button>
+				</div>
+				<div className="data-display-container">
+					{build}
+				</div>
 			</div>
 		);
 	};
