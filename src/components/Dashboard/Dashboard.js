@@ -18,6 +18,7 @@ class Dashboard extends Component {
 		};
 
 		this.updateState = this.updateState.bind(this);
+		this.startTimer = this.startTimer.bind(this);
 	};
 
 
@@ -42,9 +43,24 @@ class Dashboard extends Component {
 		this.setState(newState);
 	};
 
+	startTimer() {
+		setTimeout(() => {
+			this.updateState();
+		}, 1000);
+	};
+
 	render() {
+		this.startTimer();
+
 		const widget = () => {
-			const state = this.state;
+			let state = this.state;
+			// re-assigning state like this is a cheap workaround. future iterations should replace "state" with more dynamic code.
+			state = {
+				humidity: state.humidity,
+				temperature: state.temperature,
+				timeStamp: state.timeStamp,
+				vpd: state.vpd,
+			};
 
 			return Object.keys(state).map((curVal,i) => {
 				const text = curVal.slice(0,1).toUpperCase() + curVal.slice(1);
@@ -61,6 +77,7 @@ class Dashboard extends Component {
 
 		return (
 			<div className="Dashboard">
+				<button className="timer-btn widget" onClick={() => this.startTimer()}>Timer</button>
 				<button className="refresh-btn widget" onClick={() => this.updateState()}>Refresh</button>
 				{build}
 			</div>
