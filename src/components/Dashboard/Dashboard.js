@@ -1,7 +1,7 @@
 import { React, Component } from 'react';
 import ReactDOM from 'react-dom/client';
 import './style.css';
-import acInfinityParser from './tools/acInfinityParser.js';
+// import acInfinityParser from './tools/acInfinityParser.js';
 
 class Dashboard extends Component {
 	constructor(props) {
@@ -21,11 +21,11 @@ class Dashboard extends Component {
 	};
 
 	updateState() {
-		const cleanedData = acInfinityParser(this.props);
+		const sensorData = this.props.sensorData;
 		const newState = {};
 
 		let counter = this.state.counter;
-		let dataObject = cleanedData[counter];
+		let dataObject = sensorData[counter];
 		counter++;
 
 		dataObject.map((curVal, i) => {
