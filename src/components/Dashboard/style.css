@@ -1,4 +1,5 @@
 .dashboard {
+	font-size: 1.25em;
 	display: grid;
 	grid-template-rows: 3fr 7fr;
 	grid-template-areas: "btnContainer" "displayContainer";
@@ -8,14 +9,34 @@
 	margin: auto;
 }
 
+.dashboard-header {
+	display: grid;
+	grid-template-rows: 5fr 3fr;
+	grid-template-areas: "dashboardText" "buttonBar";
+}
+
+.dashboard-text {
+	display: grid;
+	grid-area: dashboardText;
+	justify-self: center;
+	align-self: center;
+	font-size: 5em;
+}
+
 .btn-container {
-	grid-area: btnContainer;
-	margin: auto;
+	display: grid;
+	grid-area: buttonBar;
 }
 
 .btn {
+	display: grid;
+	align-self: center;
 	justify-self: center;
-	border: 1px solid black;
+	align-items: center;
+
+	height: 4em;
+	width: 7em;
+	border: .15em solid darkgray;
 }
 
 .data-display-container {
@@ -36,19 +57,17 @@
 
 	border: .25em solid seagreen;
 	margin: auto;
-	height: 10em;
-	width: 10em;
+	height: 15em;
+	width: 15em;
 }
 
 .widget-name {
 	grid-area: widgetName;
-
 	align-self: end;
 }
 
 .widget-value {
 	grid-area: widgetValue;
-
 	align-self: start;
 }
 

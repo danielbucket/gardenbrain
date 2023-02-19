@@ -47,7 +47,7 @@ class Dashboard extends Component {
 	};
 
 	render() {
-		this.startTimer();
+		// this.startTimer();
 
 		const widget = () => {
 			let state = this.state;
@@ -75,9 +75,13 @@ class Dashboard extends Component {
 
 		return (
 			<div className="dashboard">
-				<div className="btn-container">
-					<button className="btn" onClick={() => this.updateState()}>Refresh</button>
+				<div className="dashboard-header">
+					<div className="dashboard-text">Dashboard</div>
+					<div className="btn-container">
+						<button className="btn" onClick={() => this.updateState()}>Refresh</button>
+					</div>
 				</div>
+
 				<div className="data-display-container">
 					{build}
 				</div>
