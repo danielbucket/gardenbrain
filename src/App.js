@@ -7,7 +7,11 @@ function App() {
 
   return (
     <div className="App">
-      <Dashboard {...gardenDataStub}/>
+    <div className="header">
+      <div>Garden Brain; for the brain by the brain.</div>
+      <div> --brain brain</div>
+    </div>
+    <Dashboard {...gardenDataStub}/>
     </div>
   );
 }
