@@ -1,11 +1,11 @@
 .dashboard {
-	font-size: 1.25em;
 	display: grid;
 	grid-template-rows: 3fr 7fr;
-	grid-template-areas: "btnContainer" "displayContainer";
+	grid-template-areas: "controlsContainer" "displayContainer";
 
-	border: 1px solid black;
-	width: calc(100vw - 20vw);
+	border: 1em solid darkgreen;
+	border-radius: 11.25em 1.75em;
+	width: 70em;
 	margin: auto;
 }
 
@@ -20,23 +20,8 @@
 	grid-area: dashboardText;
 	justify-self: center;
 	align-self: center;
+	font-family: Gajraj One;
 	font-size: 5em;
-}
-
-.btn-container {
-	display: grid;
-	grid-area: buttonBar;
-}
-
-.btn {
-	display: grid;
-	align-self: center;
-	justify-self: center;
-	align-items: center;
-
-	height: 4em;
-	width: 7em;
-	border: .15em solid darkgray;
 }
 
 .data-display-container {
@@ -47,6 +32,7 @@
 	grid-template-rows: 1fr 1fr;
 	grid-template-areas: "input1	input2"
 											 "input3	input4";
+	justify-self: center;
 }
 
 .widget-container {
@@ -56,19 +42,25 @@
 												"widgetValue";
 
 	border: .25em solid seagreen;
-	margin: auto;
+	border-radius: .50em;
+	margin: auto 2em auto 2em;
 	height: 10em;
-	width: 10em;
+	width: 20em;
 }
 
 .widget-name {
 	grid-area: widgetName;
 	align-self: end;
+	font-family: Nunito;
+	font-size: 2.5em;
 }
 
 .widget-value {
 	grid-area: widgetValue;
 	align-self: start;
+	font-family: Chakra Petch;
+	font-weight: 600;
+	font-size: 1.75em;
 }
 
 

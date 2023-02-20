@@ -1,6 +1,7 @@
 import { React, Component } from 'react';
 import ReactDOM from 'react-dom/client';
 import './style.css';
+import DashboardControls from './DashboardControls/DashboardControls.js';
 
 class Dashboard extends Component {
 	constructor(props) {
@@ -19,7 +20,7 @@ class Dashboard extends Component {
 		this.widget = this.widget.bind(this);
 	};
 
-	updateState() {
+	updateState(props) {
 		const sensorData = this.props.sensorData;
 		const newState = {};
 
@@ -74,10 +75,8 @@ class Dashboard extends Component {
 		return (
 			<div className="dashboard">
 				<div className="dashboard-header">
+					<DashboardControls updateButton={this.updateState}/>
 					<div className="dashboard-text">Dashboard</div>
-					<div className="btn-container">
-						<button className="btn" onClick={() => this.updateState()}>Refresh</button>
-					</div>
 				</div>
 
 				<div className="data-display-container">
