@@ -3,7 +3,7 @@ import Dashboard from './components/Dashboard/Dashboard.js';
 import acInfinityParser from './tools/acInfinityParser.js';
 
 let gardenDataStub = require('./stubs/acInfinityData.json');
-      gardenDataStub = acInfinityParser(gardenDataStub);
+    gardenDataStub = acInfinityParser(gardenDataStub);
 
 function App() {
   return (

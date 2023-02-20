@@ -9,7 +9,7 @@ function acInfinityParser(dataFile) {
 		tempData[ind] = packet.map((curVal,i) => packet[i] = { [labels[i]]:curVal });
 
 		if (!accu[ind]) { accu[ind] = tempData[ind] };
-		
+
 		return accu;
 	},{});
 };

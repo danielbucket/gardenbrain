@@ -1,7 +1,6 @@
 import { React, Component } from 'react';
 import ReactDOM from 'react-dom/client';
 import './style.css';
-// import acInfinityParser from './tools/acInfinityParser.js';
 
 class Dashboard extends Component {
 	constructor(props) {
