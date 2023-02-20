@@ -9,8 +9,8 @@ function App() {
   return (
     <div className="App">
       <div className="header">
-        <div>Garden Brain; for the brain by the brain.</div>
-        <div>--brain brain</div>
+        <div>"Garden Brain: For the brain, by the brain."</div>
+        <div>--Dr. Brian McBrainbrane</div>
       </div>
       <Dashboard sensorData={gardenDataStub}/>
     </div>

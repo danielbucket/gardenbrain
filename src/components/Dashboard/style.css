@@ -1,68 +1,69 @@
 .dashboard {
+	height: 50em;
 	display: grid;
-	grid-template-rows: 3fr 7fr;
-	grid-template-areas: "controlsContainer" "displayContainer";
+	grid-template-columns: 50fr 50fr;
+	grid-template-areas:
+		"leftSide rightSide";
 
 	border: 1em solid darkgreen;
 	border-radius: 11.25em 1.75em;
 	width: 70em;
 	margin: auto;
+	padding: 1.5em;
+}
+
+.background-image {
+	display: grid;
+	grid-area: leftSide;
+
+	background-repeat: no-repeat;
+  background-size: contain;
+  padding: 1em;
+  margin: 1em;
+}
+
+.right-side-container {
+	display: grid;
+	grid-area: rightSide;
+
+	grid-template-rows: 3fr 5fr;
+	grid-template-areas: 
+		"headerContainer"
+		"widgetBuildContainer";
 }
 
 .dashboard-header {
 	display: grid;
-	grid-template-rows: 5fr 3fr;
-	grid-template-areas: "dashboardText" "buttonBar";
+	grid-area: headerContainer;
+
+	grid-template-rows: 1fr 1fr;
+	grid-template-areas:
+		"dashboardText"
+		"dashboardControls";
 }
 
 .dashboard-text {
 	display: grid;
 	grid-area: dashboardText;
+
 	justify-self: center;
 	align-self: center;
 	font-family: Gajraj One;
-	font-size: 5em;
+	font-size: 2em;
 }
 
-.data-display-container {
-	grid-area: displayContainer;
-
+.widget-build-container {
 	display: grid;
+	grid-area: widgetBuildContainer;
+
+	grid-template-rows: 1fr 1fr;
 	grid-template-columns: 1fr 1fr;
-	grid-template-rows: 1fr 1fr;
-	grid-template-areas: "input1	input2"
-											 "input3	input4";
+	grid-template-areas:
+		"input1	input2"
+		"input3	input4";
 	justify-self: center;
-}
-
-.widget-container {
-	display: grid;
-	grid-template-rows: 1fr 1fr;
-	grid-template-areas: "widgetName"
-												"widgetValue";
-
-	border: .25em solid seagreen;
-	border-radius: .50em;
-	margin: auto 2em auto 2em;
-	height: 10em;
-	width: 20em;
-}
-
-.widget-name {
-	grid-area: widgetName;
-	align-self: end;
-	font-family: Nunito;
-	font-size: 2.5em;
-}
-
-.widget-value {
-	grid-area: widgetValue;
 	align-self: start;
-	font-family: Chakra Petch;
-	font-weight: 600;
-	font-size: 1.75em;
 }
-
 
 .temperature { grid-area: input1; }
 .humidity		 { grid-area: input2; }
