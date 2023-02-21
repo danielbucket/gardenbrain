@@ -1,25 +1,24 @@
 .dashboard {
-	height: 50em;
 	display: grid;
-	grid-template-columns: 50fr 50fr;
+	grid-template-columns: 45% 55%;
 	grid-template-areas:
 		"leftSide rightSide";
 
+	box-sizing: content-box;
+	height: 50em;
+	width: 70em;
 	border: 1em solid #faaf3f;
 	border-radius: 11.25em 1.75em;
-	width: 70em;
 	margin: auto;
-	padding: 2em;
+	padding: 1em;
 }
 
 .background-image {
 	display: grid;
 	grid-area: leftSide;
 
-	background-position: 	right 0em bottom 1em;
 	background-repeat: no-repeat;
-  background-size: contain;
-  padding: 1em;
+  background-size: 100%;
   margin: 1em;
 }
 
