@@ -1,0 +1,47 @@
+.dashboard-controls-container {
+	display: grid;
+	grid-area: dashboardControls;
+	grid-template-columns: repeat(5,1fr);
+	grid-template-areas:
+		"control1 control2 control3 control4 control5";
+
+	justify-self: center;
+}
+
+.dashboard-control-btn {
+/*	height: 4.5em;*/
+/*	width: 8em;*/
+/*	border: .15em solid #584b42;*/
+	border-radius: .25em;
+	margin: auto 1em auto 1em;
+	align-content: center;
+/*	padding: 0;*/
+	font-family: Roboto Mono;
+/*	font-size: 1.25em;*/
+
+}
+
+.update-btn {
+	display: grid;
+	grid-area: control1;
+}
+
+.temp-btn {
+	display: grid;
+	grid-area: control2;
+}
+
+.humidity-btn {
+	display: grid;
+	grid-area: control3;
+}
+
+.time-btn {
+	display: grid;
+	grid-area: control4;
+}
+
+.vpd-btn {
+	display: grid;
+	grid-area: control5;
+}

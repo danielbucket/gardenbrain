@@ -1,6 +1,11 @@
 import { React, Component } from 'react';
 import ReactDOM from 'react-dom/client';
 import './style.css';
+import DashboardControls from './DashboardControls/DashboardControls.js';
+import widget from './widget/widget.js';
+// const arborCraftLogo = require('./ArborCraft_horizontal.png');
+// const arborCraftLogo = require('./ArborCraft_circle.png');
+const arborCraftLogo = require('./ArborCraft_vertical.png');
 
 class Dashboard extends Component {
 	constructor(props) {
@@ -16,10 +21,10 @@ class Dashboard extends Component {
 
 		this.updateState = this.updateState.bind(this);
 		this.startTimer = this.startTimer.bind(this);
-		this.widget = this.widget.bind(this);
+		this.widget = widget.bind(this);
 	};
 
-	updateState() {
+	updateState(props) {
 		const sensorData = this.props.sensorData;
 		const newState = {};
 
@@ -44,45 +49,30 @@ class Dashboard extends Component {
 		}, 1000);
 	};
 
-	widget() {
-		let state = this.state;
-		// re-assigning state like this is a cheap workaround. future iterations should replace "state" with more dynamic code.
-		state = {
-			humidity: state.humidity,
-			temperature: state.temperature,
-			timeStamp: state.timeStamp,
-			vpd: state.vpd,
-		};
-
-		return Object.keys(state).map((curVal,i) => {
-			const text = curVal.slice(0,1).toUpperCase() + curVal.slice(1);
-
-			return (
-				<div className={`widget-container ${curVal.toLowerCase()}`} key={i}>
-					<div className="widget-name">{text}:</div>
-					<div className="widget-value"> {state[curVal]}</div>
-				</div>
-			);
-		});
-	};
-
 	render() {
 		// this.startTimer();
-
-		const build = this.widget();
+		const state = this.state;
+		const widgetBuild = widget(state);
 
 		return (
 			<div className="dashboard">
-				<div className="dashboard-header">
-					<div className="dashboard-text">Dashboard</div>
-					<div className="btn-container">
-						<button className="btn" onClick={() => this.updateState()}>Refresh</button>
+				<div className="background-image" style={{ backgroundImage:`url(${arborCraftLogo})` }}></div>
+
+				<div className="right-side-container">
+
+					<div className="dashboard-header">
+						<div className="dashboard-text-container">
+							<div className="dashboard-text">Garden Brain</div>
+							<div className="dashboard-subtext">"For the brain, by the brain." --Dr. Brian McBrainbrane</div>
+						</div>
+
+						<DashboardControls updateButton={this.updateState}/>
 					</div>
+
+					<div className="widget-build-container">{widgetBuild}</div>
+
 				</div>
 
-				<div className="data-display-container">
-					{build}
-				</div>
 			</div>
 		);
 	};
