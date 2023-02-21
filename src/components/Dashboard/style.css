@@ -5,7 +5,7 @@
 	grid-template-areas:
 		"leftSide rightSide";
 
-	border: 1em solid darkgreen;
+	border: 1em solid #faaf3f;
 	border-radius: 11.25em 1.75em;
 	width: 70em;
 	margin: auto;
@@ -16,6 +16,7 @@
 	display: grid;
 	grid-area: leftSide;
 
+	background-position: 	right 0em bottom 1em;
 	background-repeat: no-repeat;
   background-size: contain;
   padding: 1em;
@@ -36,20 +37,28 @@
 	display: grid;
 	grid-area: headerContainer;
 
-	grid-template-rows: 1fr 1fr;
+  grid-template-rows: 50% 50%;
 	grid-template-areas:
 		"dashboardText"
 		"dashboardControls";
 }
 
-.dashboard-text {
+.dashboard-text-container {
 	display: grid;
 	grid-area: dashboardText;
 
+	grid-template-rows: 1fr 1fr;
+}
+
+.dashboard-text {
 	justify-self: center;
 	align-self: center;
 	font-family: Gajraj One;
-	font-size: 2em;
+	font-size: 5em;
+  color: #584a42
+}
+
+.dashboard-subtext {
 }
 
 .widget-build-container {

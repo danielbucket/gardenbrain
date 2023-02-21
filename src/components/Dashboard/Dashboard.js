@@ -61,7 +61,11 @@ class Dashboard extends Component {
 				<div className="right-side-container">
 
 					<div className="dashboard-header">
-						<div className="dashboard-text">Garden Brain</div>
+						<div className="dashboard-text-container">
+							<div className="dashboard-text">Garden Brain</div>
+							<div className="dashboard-subtext">"For the brain, by the brain." --Dr. Brian McBrainbrane</div>
+						</div>
+
 						<DashboardControls updateButton={this.updateState}/>
 					</div>
 

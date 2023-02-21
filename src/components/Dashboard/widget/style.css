@@ -5,7 +5,7 @@
 		"widgetName"
 		"widgetValue";
 
-	border: .25em solid seagreen;
+	border: .25em solid #aac27e;
 	border-radius: .50em;
 	margin: 3em 2em auto 2em;
 
@@ -17,7 +17,7 @@
 	grid-area: widgetName;
 	align-self: end;
 	font-family: Nunito;
-	font-size: 2.5em;
+	font-size: 2em;
 }
 
 .widget-value {
