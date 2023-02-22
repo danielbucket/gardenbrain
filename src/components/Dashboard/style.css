@@ -92,11 +92,10 @@
 	align-self: start;
 }
 
-/*.date  			 { grid-area: input1; }*/
-.time 			 { grid-area: input1; }
+.timestamp 	 { grid-area: input1; }
+.vpd 				 { grid-area: input2; }
 .temperature { grid-area: input3; }
 .humidity		 { grid-area: input4; }
-.vpd 				 { grid-area: input2; }
 
 
 
