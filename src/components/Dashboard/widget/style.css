@@ -5,7 +5,7 @@
 		"widgetName"
 		"widgetValue";
 
-	border: .25em solid #aac27e;
+	border: .25em solid var(--logo-green);
 	border-radius: .50em;
 	padding: 1em;
   margin: 0.5em;

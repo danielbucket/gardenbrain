@@ -1,14 +1,10 @@
 import './style.css';
 
 const DashboardControls = props => {
-	const { updateButton } = props;
 
 	return(
 		<div className="dashboard-controls-container">
-		
-			<button className="update-btn dashboard-control-btn"
-				onClick={() => updateButton()}>Update</button>
-
+    
 			<button className="temp-btn dashboard-control-btn"
 				onClick={() => console.log("temp button")}>Temperature</button>
 

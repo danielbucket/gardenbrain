@@ -20,8 +20,11 @@ class Dashboard extends Component {
 		};
 
 		this.updateState = this.updateState.bind(this);
-		this.startTimer = this.startTimer.bind(this);
 		this.widget = widget.bind(this);
+	};
+
+	componentDidMount() {
+		this.updateState();
 	};
 
 	updateState(props) {
@@ -43,16 +46,10 @@ class Dashboard extends Component {
 		this.setState(newState);
 	};
 
-	startTimer() {
-		setTimeout(() => {
-			this.updateState();
-		}, 1000);
-	};
-
 	render() {
-		// this.startTimer();
 		const state = this.state;
 		const widgetBuild = widget(state);
+		const updateState = this.updateState;
 
 		return (
 			<div className="dashboard">
