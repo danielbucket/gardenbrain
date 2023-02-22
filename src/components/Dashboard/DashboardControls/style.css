@@ -1,9 +1,9 @@
 .dashboard-controls-container {
 	display: grid;
-	grid-area: dashboardControls;
+	grid-area: controlsContainer;
 	grid-template-columns: repeat(5,1fr);
 	grid-template-areas:
-		"control1 control2 control3 control4 control5";
+		"updateBtn tempBtn humidityBtn timeBtn vpdBtn";
 
 	justify-self: center;
 }
@@ -13,30 +13,29 @@
 	margin: auto 1em auto 1em;
 	align-content: center;
 	font-family: Roboto Mono;
-
 }
 
 .update-btn {
 	display: grid;
-	grid-area: control1;
+	grid-area: updateBtn;
 }
 
 .temp-btn {
 	display: grid;
-	grid-area: control2;
+	grid-area: tempBtn;
 }
 
 .humidity-btn {
 	display: grid;
-	grid-area: control3;
+	grid-area: humidityBtn;
 }
 
 .time-btn {
 	display: grid;
-	grid-area: control4;
+	grid-area: timeBtn;
 }
 
 .vpd-btn {
 	display: grid;
-	grid-area: control5;
+	grid-area: vpdBtn;
 }
