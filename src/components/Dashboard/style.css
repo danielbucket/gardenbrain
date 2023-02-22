@@ -5,7 +5,7 @@
 	grid-template-areas:
 		"leftSide rightSide";
 
-	border: 1em solid #faaf3f;
+	border: 1em solid var(--logo-orange);
 	border-radius: 11.25em 1.75em;
 	width: 70em;
 	margin: auto;
@@ -16,7 +16,7 @@
 	display: grid;
 	grid-area: leftSide;
 
-	background-position: 	right 0em bottom 1em;
+	background-position: 	right 0em top 2em;
 	background-repeat: no-repeat;
   background-size: contain;
   padding: 1em;
@@ -47,18 +47,23 @@
 	display: grid;
 	grid-area: dashboardText;
 
-	grid-template-rows: 1fr 1fr;
+	grid-template-rows: 50% 50%;
 }
 
 .dashboard-text {
 	justify-self: center;
 	align-self: center;
+
+
 	font-family: Gajraj One;
 	font-size: 5em;
-  color: #584a42
+	color: var(--logo-brown);
 }
 
 .dashboard-subtext {
+	font-family: double-pica, serif;
+	font-style: normal;
+	font-weight: 400;
 }
 
 .widget-build-container {
