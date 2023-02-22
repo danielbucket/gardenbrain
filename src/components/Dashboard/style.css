@@ -1,5 +1,4 @@
 .dashboard {
-	height: 50em;
 	display: grid;
 	grid-template-columns: 50fr 50fr;
 	grid-template-areas:
@@ -9,45 +8,49 @@
 	border-radius: 11.25em 1.75em;
 	width: 70em;
 	margin: auto;
-	padding: 2em;
+	padding: 2.25em;
 }
 
 .background-image {
 	display: grid;
 	grid-area: leftSide;
 
-.background-image {
-	display: grid;
-	grid-area: leftSide;
-
-	background-position: 	right 0em top 2em;
-	background-repeat: no-repeat;
-  background-size: contain;
+/*	background-position: 	right 0em top 2em;*/
+/*	background-repeat: no-repeat;*/
+/*  background-size: contain;*/
+/*	height: 100%;*/
+	width: 100%;
   padding: 1em;
-  margin: 1em;
 }
 
 .right-side-container {
 	display: grid;
 	grid-area: rightSide;
 
-	padding: .15em;
-
-	grid-template-rows: 10em 10em auto;
+	grid-template-rows: 3fr 5fr;
 	grid-template-areas: 
 		"headerContainer"
-		"controlsContainer"
-		"widgetContainer";
+		"widgetBuildContainer";
+
+	box-sizing: border-box;
+	height: 100%;
 }
 
 .dashboard-header {
 	display: grid;
 	grid-area: headerContainer;
 
-	grid-template-rows: 70% 30%;
-	grid-template-areas: 
+  grid-template-rows: 50% 50%;
+	grid-template-areas:
 		"dashboardText"
-		"dashboardSubtext";
+		"dashboardControls";
+}
+
+.dashboard-text-container {
+	display: grid;
+	grid-area: dashboardText;
+
+	grid-template-rows: 50% 50%;
 }
 
 .dashboard-text {
@@ -56,7 +59,7 @@
 
 
 	font-family: Gajraj One;
-	font-size: 5em;
+	font-size: 4em;
 	color: var(--logo-brown);
 }
 
@@ -66,24 +69,34 @@
 	font-weight: 400;
 }
 
+.dashboard-controls-btn {
+	display: grid;
+	grid-area: dashboardControls;
+
+	align-items: center;
+/*	font-size: 3em;*/
+
+	margin: .5em;
+}
+
 .widget-build-container {
 	display: grid;
-	grid-area: widgetContainer;
+	grid-area: widgetBuildContainer;
 
 	grid-template-rows: 1fr 1fr;
 	grid-template-columns: 1fr 1fr;
 	grid-template-areas:
 		"input1	input2"
 		"input3	input4";
-
 	justify-self: center;
 	align-self: start;
 }
 
-.temperature { grid-area: input1; }
-.humidity		 { grid-area: input2; }
-.vpd 				 { grid-area: input4; }
-.timestamp	 { grid-area: input3; }
+/*.date  			 { grid-area: input1; }*/
+.time 			 { grid-area: input1; }
+.temperature { grid-area: input3; }
+.humidity		 { grid-area: input4; }
+.vpd 				 { grid-area: input2; }
 
 
 

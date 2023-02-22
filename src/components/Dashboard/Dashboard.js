@@ -51,18 +51,24 @@ class Dashboard extends Component {
 		const widgetBuild = widget(state);
 		const updateState = this.updateState;
 
+				// <div className="background-image" style={{ backgroundImage:`url(${arborCraftLogo})` }}></div>
 		return (
 			<div className="dashboard">
-				<div className="background-image" style={{ backgroundImage:`url(${arborCraftLogo})` }}></div>
+				<img className="background-image" src={arborCraftLogo} alt="Company Logo"/>
 
 				<div className="right-side-container">
 
 					<div className="dashboard-header">
+
+						<div className="dashboard-text-container">
 							<div className="dashboard-text">Garden Brain</div>
 							<div className="dashboard-subtext">"For the brain, by the brain." --Dr. Brian McBrainbrane</div>
+						</div>
+
+						<button className="dashboard-controls-btn" onClick={() => updateState() } >Update</button>
+						
 					</div>
 
-					<DashboardControls updateButton={this.updateState}/>
 					<div className="widget-build-container">{widgetBuild}</div>
 
 				</div>
