@@ -1,25 +1,24 @@
 .dashboard {
-	height: 50em;
 	display: grid;
-	grid-template-columns: 50fr 50fr;
+	grid-template-columns: 45% 55%;
 	grid-template-areas:
 		"leftSide rightSide";
 
+	box-sizing: content-box;
+	height: 50em;
+	width: 70em;
 	border: 1em solid #faaf3f;
 	border-radius: 11.25em 1.75em;
-	width: 70em;
 	margin: auto;
-	padding: 2em;
+	padding: 1em;
 }
 
 .background-image {
 	display: grid;
 	grid-area: leftSide;
 
-	background-position: 	right 0em bottom 1em;
 	background-repeat: no-repeat;
-  background-size: contain;
-  padding: 1em;
+  background-size: 100%;
   margin: 1em;
 }
 
@@ -27,30 +26,29 @@
 	display: grid;
 	grid-area: rightSide;
 
-	grid-template-rows: 3fr 5fr;
+	padding: .15em;
+
+	grid-template-rows: 10em 10em auto;
 	grid-template-areas: 
 		"headerContainer"
-		"widgetBuildContainer";
+		"controlsContainer"
+		"widgetContainer";
 }
 
 .dashboard-header {
 	display: grid;
 	grid-area: headerContainer;
 
-  grid-template-rows: 50% 50%;
-	grid-template-areas:
+	grid-template-rows: 70% 30%;
+	grid-template-areas: 
 		"dashboardText"
-		"dashboardControls";
-}
-
-.dashboard-text-container {
-	display: grid;
-	grid-area: dashboardText;
-
-	grid-template-rows: 1fr 1fr;
+		"dashboardSubtext";
 }
 
 .dashboard-text {
+	display: grid;
+	grid-area: dashboardText;
+
 	justify-self: center;
 	align-self: center;
 	font-family: Gajraj One;
@@ -59,17 +57,21 @@
 }
 
 .dashboard-subtext {
+	display: grid;
+	grid-area: dashboardSubtext;
+	color: #9dcec9;
 }
 
 .widget-build-container {
 	display: grid;
-	grid-area: widgetBuildContainer;
+	grid-area: widgetContainer;
 
 	grid-template-rows: 1fr 1fr;
 	grid-template-columns: 1fr 1fr;
 	grid-template-areas:
 		"input1	input2"
 		"input3	input4";
+
 	justify-self: center;
 	align-self: start;
 }
