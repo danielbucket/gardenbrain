@@ -9,7 +9,6 @@
 html {
   font-size: 62.5%;
   box-sizing: border-box;
-  color: var(--logo-brown);
 }
 
 *,
@@ -18,7 +17,7 @@ html {
   box-sizing: inherit;
   margin: 0;
   outline: none;
-  grid-gap: 1px;
+  grid-gap: 1em;
 }
 
 body {
