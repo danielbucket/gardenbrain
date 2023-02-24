@@ -74,15 +74,22 @@
   padding-right: 1em;
 }
 
+.dashboard-subtext {
+	font-size: 1.25em;
+}
+
 .widget-build-container {
 	display: grid;
 	grid-area: widgetBuildContainer;
+	height: 100%;
+	width: 100%;
 
 	grid-template-rows: 1fr 1fr;
 	grid-template-columns: 1fr 1fr;
 	grid-template-areas:
 		"input1	input2"
 		"input3	input4";
+    
 	grid-gap: 1em;
 	place-self: center	;
 

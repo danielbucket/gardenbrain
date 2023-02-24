@@ -8,6 +8,7 @@
 	background-color: var(--logo-green);
 	border: .25em solid var(--logo-teal);
 	border-radius: .50em;
+
   place-self: center;
   padding: 1em;
   height: 12em;
