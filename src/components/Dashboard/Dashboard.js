@@ -3,17 +3,13 @@ import ReactDOM from 'react-dom/client';
 import './style.css';
 import DashboardControls from './DashboardControls/DashboardControls.js';
 import widget from './widget/widget.js';
-// const arborCraftLogo = require('./ArborCraft_horizontal.png');
-// const arborCraftLogo = require('./ArborCraft_circle.png');
-const arborCraftLogo = require('./ArborCraft_vertical.png');
+const arborCraftLogo = require('./media/ArborCraft_vertical.png');
 
 class Dashboard extends Component {
 	constructor(props) {
 		super(props)
 		this.state = {
 			vpd: 0,
-			//counter should be removed when live status feeds are being used
-			counter: 0,
 			humidity: 0,
 			temperature: 0,
 			timeStamp: 0,
@@ -31,18 +27,7 @@ class Dashboard extends Component {
 		const sensorData = this.props.sensorData;
 		const newState = {};
 
-		let counter = this.state.counter;
-		let dataObject = sensorData[counter];
-		counter++;
-
-		dataObject.map((curVal, i) => {
-			const key = Object.keys(curVal);
-			const value = Object.values(dataObject[i])[0];
-
-			Object.assign(newState, { [key]:value });
-		});
-
-		Object.assign(newState, { counter:counter });
+		Object.assign(newState, sensorData);
 		this.setState(newState);
 	};
 
