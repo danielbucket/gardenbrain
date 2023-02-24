@@ -1,28 +1,31 @@
 .widget-container {
 	display: grid;
-	grid-template-rows: 1fr 1fr;
+	grid-template-rows: 30% 70%;
 	grid-template-areas:
 		"widgetName"
 		"widgetValue";
 
-	border: .25em solid var(--logo-green);
+	background-color: var(--logo-green);
+	border: .25em solid var(--logo-teal);
 	border-radius: .50em;
-  margin: 0.5em;
 
-	height: 12em;
-	width: 12em;
+  place-self: center;
+  padding: 1em;
+  height: 12em;
+  width: 100%;
 }
 
 .widget-name {
 	grid-area: widgetName;
 	align-self: end;
 	font-family: Nunito;
-	font-size: 2em;
+	font-size: 2.25em;
 }
 
 .widget-value {
 	grid-area: widgetValue;
 	font-family: Chakra Petch;
-	font-weight: 600;
 	font-size: 1.75em;
+	place-self: center;
+	padding-bottom: 1.5em;
 }

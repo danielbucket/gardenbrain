@@ -61,10 +61,10 @@ class Dashboard extends Component {
 				<div className="right-side-container">
 
 					<div className="dashboard-header">
-							<h1 className="dashboard-text">Garden Brain</h1>
-							<div className="sub-text-container">
-								<p className="dashboard-subtext">"For the brain, by the brain!"</p>
-								<p>-Dr. Brain McBrianbrane</p>
+							<h1 className="dashboard-title">Garden Brain</h1>
+							<div className="quote-container">
+								<p className="dashboard-quote">"For the brain, by the brain!"</p>
+								<p className="dashboard-quote-author">-Dr. Brain McBrianbrane</p>
 							</div>
 					</div>
 

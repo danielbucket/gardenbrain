@@ -18,7 +18,7 @@ const widget = props => {
 	const newTimeStamp = date + " " + time;
 
 	const state = {
-		//note that the object keys here are used as css classNames
+		// note that the object keys here are used as class names
 		Time: newTimeStamp,
 		RH: Math.round(props.humidity) + "%",
 		VPD: props.vpd,
