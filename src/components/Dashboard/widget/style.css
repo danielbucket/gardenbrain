@@ -7,11 +7,10 @@
 
 	border: .25em solid var(--logo-green);
 	border-radius: .50em;
-	padding: 1em;
   margin: 0.5em;
 
-	height: 10em;
-	width: 15em;
+	height: 12em;
+	width: 12em;
 }
 
 .widget-name {
