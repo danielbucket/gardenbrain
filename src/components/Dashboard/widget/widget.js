@@ -18,10 +18,11 @@ const widget = props => {
 	const newTimeStamp = date + " " + time;
 
 	const state = {
-		TimeStamp: newTimeStamp,
+		//note that the object keys here are used as css classNames
+		Time: newTimeStamp,
 		RH: Math.round(props.humidity) + "%",
 		VPD: props.vpd,
-		Temperature: Math.round(props.temperature) + "°F",
+		Temp: Math.round(props.temperature) + "°F",
 	};
 
 	return Object.keys(state).map((curVal,i) => {
