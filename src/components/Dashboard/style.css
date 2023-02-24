@@ -27,13 +27,14 @@
 	display: grid;
 	grid-area: rightSide;
 
-	grid-template-rows: 3fr 5fr;
+	grid-template-rows: 15% 85%;
 	grid-template-areas: 
 		"headerContainer"
 		"widgetBuildContainer";
 
 	box-sizing: border-box;
 	height: 100%;
+	padding-bottom: 1em;
 }
 
 .dashboard-header {
@@ -41,16 +42,6 @@
 	grid-area: headerContainer;
 
   grid-template-rows: 50% 50%;
-	grid-template-areas:
-		"dashboardText"
-		"dashboardControls";
-}
-
-.dashboard-text-container {
-	display: grid;
-	grid-area: dashboardText;
-
-	grid-template-rows: 50% 50%;
 }
 
 .dashboard-text {
@@ -69,16 +60,6 @@
 	font-weight: 400;
 }
 
-.dashboard-controls-btn {
-	display: grid;
-	grid-area: dashboardControls;
-
-	align-items: center;
-/*	font-size: 3em;*/
-
-	margin: .5em;
-}
-
 .widget-build-container {
 	display: grid;
 	grid-area: widgetBuildContainer;
@@ -88,8 +69,9 @@
 	grid-template-areas:
 		"input1	input2"
 		"input3	input4";
+	grid-gap: 1em;
 	justify-self: center;
-	align-self: start;
+	align-self: center;
 }
 
 .timestamp 	 { grid-area: input1; }
