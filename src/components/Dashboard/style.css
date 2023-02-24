@@ -42,6 +42,7 @@
 	grid-area: headerContainer;
 
   grid-template-rows: 50% 50%;
+  font-size: 1em;
 }
 
 .dashboard-text {
@@ -52,6 +53,10 @@
 	font-family: Gajraj One;
 	font-size: 4em;
 	color: var(--logo-brown);
+}
+
+.sub-text-container {
+	font-size: 2em;
 }
 
 .dashboard-subtext {
