@@ -1,6 +1,6 @@
 import './style.css';
 
-const widget = props => {
+const display = props => {
 	const timeStamp = new Date(props.time);
 
 	let hours = timeStamp.getHours();
@@ -27,12 +27,12 @@ const widget = props => {
 
 	return Object.keys(state).map((curVal,i) => {
 		return (
-			<div className={`widget-container ${curVal.toLowerCase()}`} key={i}>
-				<div className="widget-name">{curVal}:</div>
-				<div className="widget-value"> {state[curVal]}</div>
+			<div className={`display-container ${curVal.toLowerCase()}`} key={i}>
+				<div className="display-name">{curVal}:</div>
+				<div className="display-value"> {state[curVal]}</div>
 			</div>
 		);
 	});
 };
 
-export default widget;
+export default display;
