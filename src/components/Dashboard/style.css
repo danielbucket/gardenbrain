@@ -27,7 +27,7 @@
 	grid-template-rows: 20% 80%;
 	grid-template-areas: 
 		"headerContainer"
-		"widgetBuildContainer";
+		"statusBuildContainer";
 
 	box-sizing: border-box;
 	height: 100%;
@@ -78,9 +78,9 @@
 	font-size: 1.25em;
 }
 
-.widget-build-container {
+.status-build-container {
 	display: grid;
-	grid-area: widgetBuildContainer;
+	grid-area: statusBuildContainer;
 	height: 100%;
 	width: 100%;
 
