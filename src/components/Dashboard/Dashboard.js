@@ -10,10 +10,10 @@ class Dashboard extends Component {
 	constructor(props) {
 		super(props)
 		this.state = {
-			vpd: 0,
-			humidity: 0,
-			temperature: 0,
-			timeStamp: 0,
+			humidity: null,
+			temperature: null,
+			time: null,
+			vpd: null,
 		};
 
 		this.updateState = this.updateState.bind(this);
@@ -25,21 +25,18 @@ class Dashboard extends Component {
 		this.updateState();
 	};
 
-	updateState(props) {
-		const sensorData = this.props.sensorData;
-		const newState = {};
+	updateState() {
+		const oldState = this.state;
+		let newState = gardenDataFetch();
 
-		gardenDataFetch();
 
-		Object.assign(newState, sensorData);
+		Object.assign(oldState, newState);
 		this.setState(newState);
 	};
 
 	render() {
 		const state = this.state;
 		const widgetBuild = widget(state);
-		const updateState = this.updateState;
-		const button = (<button className="dashboard-controls-btn" onClick={() => updateState() } >Update</button>);
 
 		return (
 			<div className="dashboard">
