@@ -1,8 +1,9 @@
-import { React, Component } from 'react';
+import { 	React, Component, useState, useEffect } from 'react';
 import ReactDOM from 'react-dom/client';
 import './style.css';
 import DashboardControls from './DashboardControls/DashboardControls.js';
 import widget from './widget/widget.js';
+import { gardenDataFetch } from '../../tools/apiFetches.js';
 const arborCraftLogo = require('./media/ArborCraft_vertical.png');
 
 class Dashboard extends Component {
@@ -17,6 +18,7 @@ class Dashboard extends Component {
 
 		this.updateState = this.updateState.bind(this);
 		this.widget = widget.bind(this);
+		this.gardenDataFetch = gardenDataFetch.bind(this);
 	};
 
 	componentDidMount() {
@@ -27,11 +29,11 @@ class Dashboard extends Component {
 		const sensorData = this.props.sensorData;
 		const newState = {};
 
+		gardenDataFetch();
+
 		Object.assign(newState, sensorData);
 		this.setState(newState);
 	};
-
-
 
 	render() {
 		const state = this.state;
@@ -42,9 +44,7 @@ class Dashboard extends Component {
 		return (
 			<div className="dashboard">
 				<img className="background-image" src={arborCraftLogo} alt="Company Logo"/>
-
 				<div className="right-side-container">
-
 					<div className="dashboard-header">
 							<h1 className="dashboard-title">Garden Brain</h1>
 							<div className="quote-container">
@@ -52,10 +52,8 @@ class Dashboard extends Component {
 								<p className="dashboard-quote-author">-Dr. Brain McBrianbrane</p>
 							</div>
 					</div>
-
 					<div className="widget-build-container">{widgetBuild}</div>
 				</div>
-
 			</div>
 		);
 	};

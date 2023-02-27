@@ -2,7 +2,6 @@ import './style.css';
 
 const widget = props => {
 	const timeStamp = new Date(props.timeStamp);
-	console.log("dick: ", props)
 
 	let hours = timeStamp.getHours();
 	const amOrPm = hours >= 12 ? 'pm' : 'am';
