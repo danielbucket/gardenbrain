@@ -1,0 +1,31 @@
+.status-container {
+	display: grid;
+	grid-template-rows: 30% 70%;
+	grid-template-areas:
+		"displayName"
+		"displayValue";
+
+	background-color: var(--logo-green);
+	border: .25em solid var(--logo-teal);
+	border-radius: .50em;
+
+  place-self: center;
+  padding: 1em;
+  height: 12em;
+  width: 100%;
+}
+
+.status-name {
+	grid-area: displayName;
+	align-self: end;
+	font-family: Nunito;
+	font-size: 2.25em;
+}
+
+.status-value {
+	grid-area: displayValue;
+	font-family: Chakra Petch;
+	font-size: 1.75em;
+	place-self: center;
+	padding-bottom: 1.5em;
+}
