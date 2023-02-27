@@ -1,8 +1,8 @@
-import { 	React, Component, useState, useEffect } from 'react';
+import { 	React, Component } from 'react';
 import ReactDOM from 'react-dom/client';
 import './style.css';
 import DashboardControls from './DashboardControls/DashboardControls.js';
-import widget from './widget/widget.js';
+import display from './display/display.js';
 import { gardenDataFetch } from '../../tools/apiFetches.js';
 const arborCraftLogo = require('./media/ArborCraft_vertical.png');
 
@@ -17,7 +17,7 @@ class Dashboard extends Component {
 		};
 
 		this.updateState = this.updateState.bind(this);
-		this.widget = widget.bind(this);
+		this.display = display.bind(this);
 		this.gardenDataFetch = gardenDataFetch.bind(this);
 	};
 
@@ -36,7 +36,7 @@ class Dashboard extends Component {
 
 	render() {
 		const state = this.state;
-		const widgetBuild = widget(state);
+		const displayBuild = display(state);
 
 		return (
 			<div className="dashboard">
@@ -49,7 +49,7 @@ class Dashboard extends Component {
 								<p className="dashboard-quote-author">-Dr. Brain McBrianbrane</p>
 							</div>
 					</div>
-					<div className="widget-build-container">{widgetBuild}</div>
+					<div className="display-build-container">{displayBuild}</div>
 				</div>
 			</div>
 		);
