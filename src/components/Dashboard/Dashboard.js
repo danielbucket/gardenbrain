@@ -1,7 +1,6 @@
 import { 	React, Component } from 'react';
 import ReactDOM from 'react-dom/client';
 import './style.css';
-import DashboardControls from './DashboardControls/DashboardControls.js';
 import statusDisplay from './statusDisplay/statusDisplay.js';
 import { gardenDataFetch } from '../../tools/apiFetches.js';
 const arborCraftLogo = require('./media/ArborCraft_vertical.png');
